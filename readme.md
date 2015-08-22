@@ -6,8 +6,3 @@
 
 [routes][app/Http/routes.php]!
 
-
-
-
-
-

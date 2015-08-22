@@ -47,8 +47,13 @@ Route::get('/driver/{name?}', function ($name = null) {
     return $name;
 });
 
-Route::get('/driver/{name?}', function ($name = '老王') {
-    return $name;
-});
+/**
+ * 正则表达式
+ */
+Route::get('/driver/{name}', function ($name = '老王') {
+    return '司机名称:'.$name;
+})->where('name', '[A-Za-z]+');
 
-
+Route::get('/driver/{id}', function($id){
+    return '司机编号:'.$id;
+})->where('id', '[0-9]+');
