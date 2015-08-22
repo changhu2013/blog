@@ -4,6 +4,7 @@
 
 ### 路由：
 
+[routes][app/Http/routes.php]!
 
 
 
