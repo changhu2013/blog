@@ -18,9 +18,9 @@ Route::get('/', function () {
 /**
  * 简单请求
  */
-Route::get('/tender', function(){
+Route::get('/tender', ['as' => 'ttt', function(){
     return '标书列表';
-});
+}]);
 
 /**
  * POST请求
@@ -57,3 +57,7 @@ Route::get('/driver/{name}', function ($name = '老王') {
 Route::get('/driver/{id}', function($id){
     return '司机编号:'.$id;
 })->where('id', '[0-9]+');
+
+Route::get('/driver/{id}/{name}', function ($id, $name) {
+    return '司机编号:'.$id.'司机姓名'.$name;
+})->where(['id' => '[0-9]+', 'name' => '[a-z]+']);
